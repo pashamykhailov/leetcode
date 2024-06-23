@@ -1,6 +1,6 @@
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-    let dummyHead = new ListNode(0);
-    let current = dummyHead;
+    let dH = new ListNode(0);
+    let cur = dH;
     let carry = 0;
 
     while(l1 !== null || l2 !== null) {
@@ -11,13 +11,13 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
 
         carry = Math.floor(sum / 10);
 
-        current.next = new ListNode(sum % 10);
-        current = current.next;
+        cur.next = new ListNode(sum % 10);
+        cur = cur.next;
         
         if(l1 !== null) l1 = l1.next;
         if(l2 !== null) l2 = l2.next;
     }
-    if (carry > 0) current.next = new ListNode(carry);
+    if (carry > 0) cur.next = new ListNode(carry);
 
-    return dummyHead.next;
+    return dH.next;
 };
