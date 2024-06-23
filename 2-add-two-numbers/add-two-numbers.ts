@@ -9,8 +9,8 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
         carry = Math.floor(sum / 10);
         cur.next = new ListNode(sum % 10);
         cur = cur.next;
-        l1 !== null ? l1 = l1.next : null;
-        l2 !== null ? l2 = l2.next : null;
+        if(l1 !== null) l1 = l1.next;
+        if(l2 !== null) l2 = l2.next;
     }
     if (carry > 0) cur.next = new ListNode(carry);
     return dH.next;
