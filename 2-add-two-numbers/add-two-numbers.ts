@@ -2,6 +2,7 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
     let dH = new ListNode(0);
     let cur = dH;
     let carry = 0;
+    
     while(l1 !== null || l2 !== null) {
         let x = l1 ? l1.val : 0;
         let y = l2 ? l2.val : 0;    
