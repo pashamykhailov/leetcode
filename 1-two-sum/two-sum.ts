@@ -1,12 +1,7 @@
 function twoSum(nums: number[], target: number): number[] {
-    let h = {};
+    let hash = new Map();
     for (let i = 0; i < nums.length; i++) {
-        let c = target - nums[i];
-        if(h[c] !== undefined) {
-           return [h[c], i];
-        } else {
-            h[nums[i]] = i;
-        } 
+        if (hash.has(target - nums[i])) return [hash.get(target - nums[i]), i];
+        hash.set(nums[i], i);
     }
-  return [];
 };
